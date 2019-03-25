@@ -1,0 +1,32 @@
+<br>
+<h4 class="ui horizontal divider header whiter">
+  <i class="fire icon" style="font-size:2.5em"></i>
+</h4>
+<p class="ui container center aligned whiter">All Rights Reserved <i style="font-size:1.2em" class="copyright icon"></i></p>
+<p class="ui container center aligned whiter">Made with <i style="font-size:1.2em" class="heart icon"></i></p>
+<script>
+
+$(window).scroll(function() {
+// 100 = The point you would like to fade the nav in.
+  
+	if ($(window).scrollTop() > 91.8 ){
+    
+ 		$('.navbar').addClass('show');
+    
+  } else {
+    
+    $('.navbar').removeClass('show');
+    
+ 	};   	
+});
+
+$('.scroll').on('click', function(e){		
+		e.preventDefault()
+    
+  $('html, body').animate({
+      scrollTop : $(this.hash).offset().top
+    }, 2000);
+});
+</script>
+</body>
+</html>

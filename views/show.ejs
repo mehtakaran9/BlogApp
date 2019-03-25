@@ -1,0 +1,26 @@
+<% include partials/header %>
+<div class="ui container raised very padded text segment">
+    <h1><%= foundBlog.title %></h1>
+    <h2>Date: <%= foundBlog.created.toDateString() %></h2><br>
+    <div class="ui container center aligned">
+        <img class="ui centered rounded image" src ="<%=foundBlog.image%>">
+    </div>
+    <br>
+    <p class="substring"><%= foundBlog.body %></p>
+    <br>
+    <div>
+        <h3 class="ui red header">Comments</h3>
+        <% foundBlog.comments.forEach(function(comment) { %>
+            <strong><%=comment.author%></strong>  <%= comment.text %>
+        <hr>
+        <% }); %><br>
+    </div>
+    <div class="ui horizontal divider"></div>
+    <a class="ui green button" href="/blogs/<%= foundBlog._id %>/comments/new">Add Comment</a>
+    <a href="/blogs/<%=foundBlog._id%>/edit"><button class="ui primary button">Edit</button></a>
+    <form action="/blogs/<%=foundBlog._id%>/delete?_method=DELETE" method="POST" style="display: inline">
+        <a href="/blogs/<%=foundBlog._id%>/delete"><button class="ui secondary button">Delete</button></a>
+    </form>
+    
+</div>
+<% include partials/footer %>

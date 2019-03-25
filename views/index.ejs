@@ -1,0 +1,21 @@
+<% include partials/header %>
+<h1 class="ui center aligned icon header">
+  <i class="circular code inverted icon"></i>
+  <p class="welcome">WELCOME!</p>
+</h1>
+<% for (i=0; i < blogs.length; i++){ %>
+    <div class="ui raised very padded text container segment" id="<%= blogs[i]._id %>">
+        <h2><%=blogs[i].title%></h2>
+        <span><%=blogs[i].created.toDateString()%></span>
+        <br><br>
+        <div class="ui container center aligned">
+            <img class="ui centered rounded image" src ="<%=blogs[i].image%>">
+        </div>
+        <br>
+        <p class="substring"><%=blogs[i].body.substring(0, 100)%>...</p>
+        <a href="/blogs/<%=blogs[i]._id%>">
+            <button class="ui purple basic button">Read More<i class="right chevron icon"></i></button>
+        </a>
+    </div>
+<% }; %>
+<% include partials/footer %>     

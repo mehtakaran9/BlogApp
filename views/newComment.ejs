@@ -1,0 +1,16 @@
+<% include partials/header %>
+<div class="ui raised very padded text container segment" style="margin-top:75px;">
+    <h1>Add Comment to <%= foundBlog.title %></h1>
+    <form class="ui form" action="/blogs/<%= foundBlog._id %>/comments" method="POST">
+      <div class="field">
+        <label>Author</label>
+        <input type="text" name="comment[author]">
+      </div>
+      <div class="field">
+        <label>Text</label>
+        <input type="text" name="comment[text]">
+      </div>
+      <button class="ui basic primary button" type="submit">Submit</button>
+    </form>
+</div>
+<% include partials/footer %>
